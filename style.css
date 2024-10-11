@@ -1,6 +1,128 @@
+/* General body styling */
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-  }
+  /* Set line height to 1.5 times the font size
+     and use the OS’s UI font as the website font */
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch)/2);
+}
+
+/* Define an accent color as a CSS custom property */
+:root {
+  --color-accent: oklch(65% 50% 0); /* Set the accent color */
+}
+
+/* Apply the accent color to the entire document */
+html, body {
+  accent-color: var(--color-accent);
+}
+
+/* Step 2: Styling the navigation bar */
+
+/* Remove bullets and default list behavior */
+nav ul, nav ul li {
+  display: contents;
+}
+
+/* Enable Flexbox for the navigation */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1em;
+  border-bottom: 1px solid oklch(80% 3% 200); /* Subtle gray border */
+}
+
+/* Style the navigation links */
+nav a {
+  flex: 1; /* Each link takes up equal space */
+  text-align: center;
+  text-decoration: none;
+  color: inherit; /* Inherit parent text color */
+  padding: 0.5em; /* Spacing inside each link */
+}
+
+/* Style the current page link */
+nav a.current {
+  border-bottom: 0.4em solid oklch(80% 3% 200); /* Thicker border for current page */
+  padding-bottom: 0.1em; /* Adjust padding for the thick border */
+}
+
+/* Hover styles for the navigation links */
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent); /* Accent color on hover */
+  background-color: oklch(95% 5% from var(--color-accent)); /* Light background on hover */
+}
+
+/* Step 3: Contact form layout */
+
+/* Ensure form controls inherit the page font */
+form input, form textarea, form button {
+  font: inherit;
+}
+
+/* Vertical stack layout for the form fields */
+form label, form input, form textarea, form button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-block: 0.1em; /* Add space between form elements */
+}
+
+/* Grid layout for labels and inputs */
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+/* Ensure labels stay in the first column */
+form label {
+  grid-column: 1;
+}
+
+/* Ensure inputs and textareas are in the second column */
+form input, form textarea {
+  grid-column: 2;
+}
+
+/* Step 4: Projects page layout */
+
+/* Responsive grid layout for projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em; /* Add space between grid items */
+}
+
+/* Align content within each article */
+article {
+  display: grid;
+  grid-template-rows: subgrid; /* Align contents within articles */
+  grid-row: span 3; /* Make articles span three rows */
+  margin: 0;
+}
+
+/* Adjustments to headings for contrast */
+h1 {
+  font-size: 400%; /* Make the main heading significantly larger */
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h2 {
+  margin: 0;
+  line-height: 1.1; /* Tighter line height for headings */
+  text-wrap: balance;
+}
+
+/* General styling for images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: Add padding to space out elements */
+nav, form, .projects {
+  padding: 1em;
+}
