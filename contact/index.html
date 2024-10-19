@@ -8,28 +8,17 @@
     <script src="../global.js" type="module"></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="index.html">Contact</a></li>
-            <li><a href="https://docs.google.com/document/d/1MvO_SPaArLqPTd3fcjVUf6nAVo75bHhgX67YEaoC2dY/view" target="_blank">Resume</a></li>
-            <li><a href="https://github.com/allison-conrey" target="_blank">GitHub</a></li>
-        </ul>
-    </nav>
     <h1>Contact Me</h1>
-    <form action="mailto:alconrey@ucsd.edu" method="POST" enctype="text/plain">
-
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="subject">Subject:</label><br>
-        <input type="text" id="subject" name="subject" required><br><br>
-
-        <label for="body">Message:</label><br>
-        <textarea id="body" name="body" rows="6" cols="50" required></textarea><br><br>
-
-        <button>Send</button>
-    </form>
+    <form id="contact-form" action="mailto:anconrey@gmail.com">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send</button>
+      </form> 
 </body>
 </html>
+
+  
