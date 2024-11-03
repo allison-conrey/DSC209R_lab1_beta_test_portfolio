@@ -6,9 +6,9 @@ function $$(selector, context = document) {
 
 // Step 3: Dynamic Navigation Menu
 let pages = [
-  { url: '', title: 'Home' },
-  { url: 'projects/', title: 'Projects' },
-  { url: 'contact/', title: 'Contact' },
+  { url: './', title: 'Home' },
+  { url: 'projects', title: 'Projects' },
+  { url: 'contact', title: 'Contact' },
   { url: 'https://docs.google.com/document/d/1MvO_SPaArLqPTd3fcjVUf6nAVo75bHhgX67YEaoC2dY/view', title: 'Resume', external: true },
   { url: 'https://github.com/allison-conrey', title: 'GitHub', external: true }
 ];
@@ -16,9 +16,6 @@ let pages = [
 // Create a new <nav> element and prepend it to the body
 let nav = document.createElement('nav');
 document.body.prepend(nav);
-
-// Detect if we're on the home page
-const ARE_WE_HOME = document.body.classList.contains('home');
 
 // Add links to the <nav> element dynamically
 for (let p of pages) {
